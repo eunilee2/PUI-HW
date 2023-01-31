@@ -1,4 +1,7 @@
 .button{
     background-color:#FFFF00;
     border:black;
+    border-style:solid;
+    padding:10px 15px;
+    display:inline-block;
     }
