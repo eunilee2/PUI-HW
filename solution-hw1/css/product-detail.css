@@ -1,0 +1,43 @@
+/*Navigation*/
+.logo{
+    width:33%;
+    height:auto;
+}
+.navrule{
+    height:3px;
+    background-color:black;
+    border:none;
+}
+.navtext{
+    font-family:Helvetica;
+    font-size:12pt;
+    font-weight:150;
+}
+.textcenter{
+    text-align:center;
+}
+.padded{
+    padding-bottom:30px;
+}
+/*Main*/
+.heading{
+    font-family:Helvetica;
+    font-size:16pt;
+    font-weight:100;
+}
+.productimg{
+    width:60%;
+    height:auto;
+    border:3px solid black;
+}
+.centerimg{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
+.body{
+    font-family:Helvetica;
+    font-size:12pt;
+    font-weight:150;
+    padding:0px;
+}
