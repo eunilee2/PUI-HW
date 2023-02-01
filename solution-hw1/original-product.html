@@ -9,7 +9,7 @@
     <body>
   
       <nav class="padded">
-        <a href="index.html">
+        <a href="product-gallery.html">
           <img src="logo/logo-01.svg" class="logo" alt="logo"/>
         </a>  
         <hr class="navrule"/>
@@ -17,35 +17,43 @@
         <h2 class="navtext textcenter">CART</h2>
       </nav>
       <main>
-        <section class="padded">
+        <section>
             <h1 class="heading textcenter">Original cinnamon roll</h1>
             <img src="products/original-cinnamon-roll.jpg" 
             class="productimg centerimg" alt="original cinnamon roll"/>
-            <p class="body">Customize our delicious,<br> 
-                hand-made cinnamon roll<br>to your liking!</p>
         </section>
-        <section>
-            <form action="shopping-cart.html">
-                    <div class="padded">
-                      <label>Glazing:</label>
-                      <select required>
+        <section class="box">
+          <p class="body">Customize our delicious,<br> 
+            hand-made cinnamon roll<br>to your liking!</p>
+          <form action="shopping-cart.html">
+                  <div class="spaceUp">
+                    <label class="body">Glazing:</label>
+                    <div class="select-wrapper">
+                      <select required class="body form">
                         <option value="original">Keep original</option>
                         <option value="sugar milk">Sugar milk</option>
                         <option value="vanilla milk">Vanilla milk</option>
                         <option value="double chocolate">Double chocolate</option>
                       </select>
-                      <label>Pack size:</label>
-                      <select required>
+                    </div>
+                  </div>
+                  <div class="spaced">
+                    <label class="body">Pack size:</label>
+                    <div class="select-wrapper">  
+                      <select required class="body form">
                         <option value="1">1</option>
                         <option value="3">3</option>
                         <option value="6">6</option>
                         <option value="12">12</option>
                       </select>
                     </div>
-                <div class="align">
-                  <p class="body">$2.49</p>
-                  <input type="shopping cart" value="Add to Cart">
-                </div>
+                  </div>
+              <div class="align upSpace">
+                <p class="body">$2.49</p>
+                <button class="button container" 
+                  name="Add to Cart" value="Add to Cart">Add to Cart</button>
+              </div>
+              </div>
                     
             </form>
         </section>
