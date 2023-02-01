@@ -17,7 +17,7 @@
         <h2 class="navtext textcenter">CART</h2>
       </nav>
       <main>
-        <section>
+        <section class="padded">
             <h1 class="heading textcenter">Original cinnamon roll</h1>
             <img src="products/original-cinnamon-roll.jpg" 
             class="productimg centerimg" alt="original cinnamon roll"/>
@@ -26,23 +26,27 @@
         </section>
         <section>
             <form action="shopping-cart.html">
-                    <label>Glazing:</label>
-                    <select required>
+                    <div class="padded">
+                      <label>Glazing:</label>
+                      <select required>
                         <option value="original">Keep original</option>
                         <option value="sugar milk">Sugar milk</option>
                         <option value="vanilla milk">Vanilla milk</option>
-                        <option value="Double chocolate">Double chocolate</option>
-                    </select>
-                    <label>Pack size:</label>
-                    <select required>
+                        <option value="double chocolate">Double chocolate</option>
+                      </select>
+                      <label>Pack size:</label>
+                      <select required>
                         <option value="1">1</option>
                         <option value="3">3</option>
                         <option value="6">6</option>
                         <option value="12">12</option>
-                    </select>
-                <br><br>
-                <p>$2.49</p>
-                <input type="shopping cart" value="Add to Cart">
+                      </select>
+                    </div>
+                <div class="align">
+                  <p class="body">$2.49</p>
+                  <input type="shopping cart" value="Add to Cart">
+                </div>
+                    
             </form>
         </section>
       </main>
