@@ -19,6 +19,18 @@
 .padded{
     padding-bottom:30px;
 }
+.selection{
+    color:black;
+    text-decoration:none;
+}
+.navbox{
+    margin-left:auto;
+    margin-right:auto;
+    width:fit-content;
+}
+.navbox:hover{
+    background-color:yellow;
+}
 /*Main*/
 .heading{
     font-family:Helvetica;
