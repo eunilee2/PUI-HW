@@ -13,13 +13,12 @@
     font-size:12pt;
     font-weight:150;
 }
-.center{
+.textcenter{
     text-align:center;
 }
 .padded{
-    padding-bottom:20px;
+    padding-bottom:30px;
 }
-
 
 /*Main*/
 .heading{
@@ -27,12 +26,46 @@
     font-size:16pt;
     font-weight:100;
 }
-
-
+.cartimg{
+    width:10%;
+    height:auto;
+    border:3px solid black;
+}
+.centerimg{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
+.caption{
+    font-family:Helvetica;
+    font-size:5pt;
+    font-weight:800;
+}
+.body{
+    font-family:Helvetica;
+    font-size:12pt;
+    font-weight:150;
+    padding:0px;
+}
+.spacing{
+    padding:10px;
+}
+.bottrule{
+    height:3px;
+    width:66%;
+    background-color:black;
+    border:none;
+}
+.container{
+    font-family:Helvetica;
+    font-size:10pt;
+    font-weight:600;
+    margin:0 auto;
+}
 .button{
     background-color:#FFFF00;
-    border:black;
-    border-style:solid;
+    border:black solid 2px;
     padding:10px 15px;
-    display:inline-block;
-    }
+    display:flex;
+    justify-content:center;
+}

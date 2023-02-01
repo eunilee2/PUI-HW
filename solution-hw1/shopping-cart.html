@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="css/shopping-cart.css">
     </head>
     
+    
     <body>
   
         <nav class="padded">
@@ -13,31 +14,40 @@
             <img src="logo/logo-01.svg" class="logo" alt="logo"/>
           </a>  
           <hr class="navrule"/>
-          <h2 class="navtext center">PRODUCTS</h2>
-          <h2 class="navtext center">CART</h2>
+          <h2 class="navtext textcenter">PRODUCTS</h2>
+          <h2 class="navtext textcenter">CART</h2>
         </nav>
 
         <main>
-            <h1 class="heading center">Shopping cart</h1>
-            <section>
-                <img src="products/original-cinnamon-roll.jpg" 
-                alt="original cinnamon roll"/>
-                <p>Original Cinnamon Roll</p>
-                <p>Glazing:Keep original</p>
-                <p>Pack size:1</p>
-                <p>$2.49</p>
+            <h1 class="heading textcenter">Shopping cart</h1>
+            <section class="spacing">
+                <div>
+                    <img src="products/original-cinnamon-roll.jpg" 
+                    class="cartimg centerimg" alt="original cinnamon roll"/>
+                    <p class="caption textcenter">Remove</p>
+                </div>
+                <p class="body textcenter">Original Cinnamon Roll<br>
+                    Glazing: Keep original<br>
+                    Pack size: 1</p>
+                <p class="body textcenter">$2.49</p>
             </section>
-            <section>
-                <img src="products/double-chocolate-cinnamon-roll.jpg" 
-                alt="double chocolate cinnamon roll"/>
-                <p>Double Chocolate Cinnamon Roll</p>
-                <p>Glazing:Sugar milk</p>
-                <p>Pack size:6</p>
-                <p>$27.45</p>
+            <section class="spacing">
+                <div>
+                    <img src="products/double-chocolate-cinnamon-roll.jpg" 
+                    class="cartimg centerimg" alt="double chocolate cinnamon roll"/>
+                    <p class="caption textcenter">Remove</p>
+                </div>
+                <p class="body textcenter">Double Chocolate Cinnamon Roll<br>
+                    Glazing: Sugar milk<br>
+                    Pack size: 6</p>
+                <p class="body textcenter">$27.45</p>
             </section>
-            <hr/>
-            <p>Total:$29.94</p>
-            <button class="button" name="Checkout" value="Checkout">Checkout</button>
+            <hr class="bottrule"/>
+            <p class="body textcenter">Total:$29.94</p>
+            <div>
+                <button class="button container" 
+                name="Checkout" value="Checkout">Checkout</button>
+            </div>
         </main>
     </body>
 </html>
