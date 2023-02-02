@@ -58,6 +58,9 @@
     justify-content:flex-end;
     column-gap:10px;
 }
+.valign{
+    vertical-align:baseline;
+}
 .box{
     width:30%;
     height:auto;
@@ -87,14 +90,14 @@
     -moz-appearance:none;
     -webkit-appearance:none;
     padding:5px;
-
 }
 .button{
     background-color:#FFFF00;
     border:black solid 2px;
-    padding:12px 5px;
+    padding:5px 12px;
     display:flex;
     justify-content:center;
+    margin-top:20px;
 }
 .select-wrapper{
     position:relative;
