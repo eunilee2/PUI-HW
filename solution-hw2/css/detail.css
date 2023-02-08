@@ -46,3 +46,69 @@
 .pagealign{
     margin-top:64px;
 }
+
+/* Main */
+#body{
+    margin-left:50px;
+    margin-right:50px;
+    width:300px;
+}
+.flex{
+    display:flex;
+}
+.spacing{
+    padding-top:50px;
+}
+.spacer{
+    padding-top:20px;
+}
+.img{
+    margin-left:100px;
+    width:700px;
+    height:auto;
+    border:3px solid black;
+}
+.text{
+    font-family:Helvetica;
+    font-size:18pt;
+    font-weight:150;
+    margin:0px;
+}
+.form{
+    border: 3px solid black;
+    width:100%;
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    padding:5px;
+}
+.select-wrapper{
+    position:relative;
+}
+.select-wrapper:after{
+    content:"▼";
+    font-family:Helvetica;
+    font-size:12pt;
+    top:32px;
+    right:8px;
+    position:absolute;
+}
+.center{
+    margin-top:15px;
+}
+.button{
+    background-color:#FFFF00;
+    border:black solid 3px;
+    padding:10px 15px;
+}
+.buttontext{
+    font-family:Helvetica;
+    font-size:16pt;
+    font-weight:600;
+}
+.buttonalign{
+    margin-right:0;
+    margin-left:auto;
+    justify-content:end;
+    display:flex;
+}
