@@ -3,10 +3,12 @@
     width:33%;
     height:auto;
 }
+.align{
+    display:inline block;
+}
 .navflex{
     display:flex;
-    flex-direction:row;
-    justify-content:flex-start;
+    width:auto;
 }
 .navbox{
     display:flex;
