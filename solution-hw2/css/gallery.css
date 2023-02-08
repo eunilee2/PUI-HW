@@ -26,7 +26,7 @@
 .navtext:hover{
     background-color:yellow;
 }
-.navrule{
+.rule{
     height:5px;
     width:800px;
     background-color:black;
