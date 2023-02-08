@@ -1,21 +1,27 @@
 /* Navigation */
 .logo{
-    width:33%;
+    width:400px;
     height:auto;
-}
-.align{
-    display:inline block;
 }
 .navflex{
     display:flex;
-    width:auto;
+}
+.menu{
+    flex-direction:column;
 }
 .navbox{
     display:flex;
-    align-self:flex-end;
+    height:100px;
+    margin-bottom:auto;
 }
 .navtext{
     font-family:Helvetica;
     font-size:12pt;
     font-weight:150;
+}
+.navrule{
+    height:3px;
+    width:800px;
+    background-color:black;
+    border:none;
 }
