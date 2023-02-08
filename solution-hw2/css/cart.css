@@ -5,6 +5,8 @@
 }
 .navflex{
     display:flex;
+    flex-direction:row;
+    justify-content:flex-start;
 }
 .navbox{
     display:flex;
