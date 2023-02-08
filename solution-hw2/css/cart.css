@@ -1,3 +1,17 @@
+/* Navigation */
+.logo{
+    width:33%;
+    height:auto;
+}
 .navflex{
     display:flex;
+}
+.navbox{
+    display:flex;
+    align-self:flex-end;
+}
+.navtext{
+    font-family:Helvetica;
+    font-size:12pt;
+    font-weight:150;
 }
