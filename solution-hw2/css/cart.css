@@ -87,3 +87,25 @@
     margin-bottom:auto;
     column-gap:150px;
 }
+.flex-child3{
+    justify-content:space-between;
+    margin-top:35px;
+    margin-bottom:35px;
+    margin-right:50px;
+    margin-left:155px;
+}
+.button{
+    background-color:#FFFF00;
+    border:black solid 3px;
+    padding:15px 20px;
+}
+.buttontext{
+    font-family:Helvetica;
+    font-size:16pt;
+    font-weight:600;
+}
+.buttonalign{
+    margin:auto 45px;
+    justify-content:end;
+    display:flex;
+}
