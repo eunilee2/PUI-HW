@@ -81,7 +81,7 @@
     text-decoration:underline;
 }
 .text:hover{
-    text-decoration:bold;
+    font-weight:600;
 }
 .spacing{
     padding-top:50px;
