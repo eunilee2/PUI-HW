@@ -80,6 +80,9 @@
 .text:visited{
     text-decoration:underline;
 }
+.text:hover{
+    text-decoration:bold;
+}
 .spacing{
     padding-top:50px;
 }
