@@ -46,3 +46,40 @@
 .pagealign{
     margin-top:64px;
 }
+/* Main */
+#body{
+    margin-left:100px;
+    margin-right:100px;
+    margin-top:50px;
+}
+.flex{
+    display:flex;
+    justify-content:space-between;
+}
+.img{
+    width:275px;
+    height:auto;
+    border:3px solid black;
+}
+.box{
+    padding:4px;
+}
+.box:hover{
+    background-color:yellow;
+}
+.text{
+    font-family:Helvetica;
+    font-size:18pt;
+    font-weight:150;
+    color:black;
+    margin:0px;
+}
+.text:link{
+    text-decoration:none;
+}
+.text:visited{
+    text-decoration:underline;
+}
+.spacing{
+    padding-top:50px;
+}
