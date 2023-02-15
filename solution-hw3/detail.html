@@ -43,7 +43,7 @@
             <label class="text">Glazing: </label>
             <div class="select-wrapper spacer">
               <select require id="glazingOptions" class="text form"
-              onchange="glazingChange(element)">
+              onchange="onSelectValueChange()">
                 <option id="original" value="0"> Keep original</option>
                 <option id="sugar"value="0">Sugar milk</option>
                 <option id="vanilla"value="0.5">Vanilla milk</option>
@@ -55,7 +55,7 @@
             <label class="text">Pack size: </label>
             <div class="select-wrapper spacer">
               <select require id="sizeOptions" class="text form"
-              onchange="sizeChange(this)">
+              onchange="onSelectValueChange()">
                 <option id="1" value="1"> 1</option>
                 <option id="3" value="3">3</option>
                 <option id="6" value="5">6</option>
