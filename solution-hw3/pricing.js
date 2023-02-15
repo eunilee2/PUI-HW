@@ -1,17 +1,8 @@
-// function displayGlazing(element){
-//     let priceFinalElement=document.querySelector('#priceFinal');
-//     priceFinalElement.innerText=bun.price;
-// }
-
-let glazings=[
-    {
-        
-    }
-]
+let bunPrice=2.49;
 
 function glazingChange(element){
-
-        const priceChange=element.value;
+    glazingValue=document.querySelector('#glazingOptions');
+    priceChange=glazingValue.options[glazingValue.selectedIndex].value;
 }
 
-let selectElement=document.querySelector('#glazingOptions');
+document.querySelector('.priceChange').content=priceChange;

@@ -43,7 +43,7 @@
             <label class="text">Glazing: </label>
             <div class="select-wrapper spacer">
               <select require id="glazingOptions" class="text form"
-              onchange="glazingChange(this)">
+              onchange="glazingChange(element)">
                 <option id="original" value="0"> Keep original</option>
                 <option id="sugar"value="0">Sugar milk</option>
                 <option id="vanilla"value="0.5">Vanilla milk</option>
@@ -64,7 +64,7 @@
             </div>
           </div>
           <div class="flex spacing">
-            <p id="priceFinal" class="text center"></p>
+            <p class="text center" onchange="glazingChange(element)"></p>
             <section class="buttonalign">
               <button class="button buttontext" name="Add to Cart"
               value="Add to Cart">Add to Cart</button>
