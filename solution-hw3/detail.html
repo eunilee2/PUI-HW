@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Original Cinnamon Roll</title>
     <link rel="stylesheet" href="css/detail.css">
+    <script src="pricing.js"></script>
   </head>  
 
   
@@ -41,27 +42,29 @@
           <div class="spacing">
             <label class="text">Glazing: </label>
             <div class="select-wrapper spacer">
-              <select require class="text form">
-                <option value="original"> Keep original</option>
-                <option value="sugar milk">Sugar milk</option>
-                <option value="vanilla milk">Vanilla milk</option>
-                <option value="double chocolate">Double chocolate</option>
+              <select require id="glazingOptions" class="text form"
+              onchange="glazingChange(this)">
+                <option id="original" value="0"> Keep original</option>
+                <option id="sugar"value="0">Sugar milk</option>
+                <option id="vanilla"value="0.5">Vanilla milk</option>
+                <option id="chocolate"value="1.5">Double chocolate</option>
               </select>
             </div>
           </div>
           <div class="spacer">
             <label class="text">Pack size: </label>
             <div class="select-wrapper spacer">
-              <select require class="text form">
-                <option value="1"> 1</option>
-                <option value="3">3</option>
-                <option value="6">6</option>
-                <option value="12">12</option>
+              <select require id="sizeOptions" class="text form"
+              onchange="sizeChange(this)">
+                <option id="1" value="1"> 1</option>
+                <option id="3" value="3">3</option>
+                <option id="6" value="5">6</option>
+                <option id="12" value="10">12</option>
               </select>
             </div>
           </div>
           <div class="flex spacing">
-            <p class="text center">$2.49</p>
+            <p id="priceFinal" class="text center"></p>
             <section class="buttonalign">
               <button class="button buttontext" name="Add to Cart"
               value="Add to Cart">Add to Cart</button>
