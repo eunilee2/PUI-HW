@@ -14,20 +14,19 @@ let sizes=[
 
 let glazingOptions=document.querySelector('#glazingOptions');
 let sizeOptions=document.querySelector('#sizeOptions');
-let index=0;
 
-for (index<glazings.length; index++;)
+for (let i=0; i<glazings.length; i++;)
 {
-    let selected=glazings[index];
+    let selected=glazings[i];
     let option=document.createElement('option');
     option.text=selected.select;
     option.value=selected.add;
     glazingOptions.add(option);
 }
 
-for (index<sizes.length; index++;)
+for (let i=0; i<sizes.length; i++;)
 {
-    let selected=sizes[index];
+    let selected=sizes[i];
     let option=document.createElement('option');
     option.text=selected.select;
     option.value=selected.add;
@@ -42,7 +41,7 @@ function onSelectValueChange(){
     let sizePrice=parseFloat(sizeOptions.value);
     const bunPrice=2.49;
     let displayPrice=document.querySelector('.text');
-    let itemPrice=(bunPrice+glazingPrice)*packPrice;
+    let itemPrice=(bunPrice+glazingPrice)*sizePrice;
     let roundedPrice='$'+itemPrice.toFixed(2);
 
     displayPrice.innerText=roundedPrice;
