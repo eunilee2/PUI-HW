@@ -13,7 +13,7 @@ let sizes=[
 ]
 
 let glazingOptions=document.querySelector('#glazingOptions');
-
+let sizeOptions=document.querySelector('#sizeOptions');
 
 for (let i=0; i<glazings.length; i++)
 {
@@ -23,8 +23,6 @@ for (let i=0; i<glazings.length; i++)
     option.value=selected.add;
     glazingOptions.add(option);
 }
-
-let sizeOptions=document.querySelector('#sizeOptions');
 
 for (let i=0; i<sizes.length; i++)
 {
