@@ -27,12 +27,23 @@ for (index<glazings.length; index++;)
 
 for (index<sizes.length; index++;)
 {
-    let selected=sizes
+    let selected=sizes[index];
+    let option=document.createElement('option');
+    option.text=selected.select;
+    option.value=selected.add;
+    glazingOptions.add(option);
 }
 
-
+glazingOptions.addEventListener('change', onSelectValueChange);
+sizeOptions.addEventListener('change', onSelectValueChange);
 
 function onSelectValueChange(){
-    letglazingPrice=parseFloat(glazingOptions.value);
+    let glazingPrice=parseFloat(glazingOptions.value);
+    let sizePrice=parseFloat(sizeOptions.value);
+    const bunPrice=2.49;
+    let displayPrice=document.querySelector('.text');
+    let itemPrice=(bunPrice+glazingPrice)*packPrice;
+    let roundedPrice='$'+itemPrice.toFixed(2);
 
+    displayPrice.innerText=roundedPrice;
 }
