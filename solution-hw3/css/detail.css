@@ -112,3 +112,10 @@
     justify-content:end;
     display:flex;
 }
+.price{
+    margin-top:15px; 
+    font-family:Helvetica;
+    font-size:18pt;
+    font-weight:150;
+    margin:0px;
+}
