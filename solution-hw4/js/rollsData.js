@@ -30,9 +30,12 @@ const cart=[];
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 const rollType = params.get(‘roll’);
+console.log(rollType);
 
-const headerElement=document.querySelector('#cinnamon-roll-header');
-headerElement.innerText=rollType
 
-const rollImage=document.querySelector('#roll-image');
-rollImage.src='./assets/-'+rollType+'-cinnamon-roll.jpg';
+
+const headerElement=document.querySelector('#headerElement');
+headerElement.innerText=rollType+' Cinnamon Roll';
+
+const rollImage=document.querySelector('#rollImage');
+rollImage.src='./assets/'+rollType+'-cinnamon-roll.jpg';
