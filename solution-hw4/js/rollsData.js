@@ -1,3 +1,5 @@
+//Updating Detail Page
+
 const rolls = {
     "Original": {
         "basePrice": 2.49,
@@ -34,18 +36,37 @@ console.log(rollType);
 
 
 const headerElement=document.querySelector('#headerElement');
-headerElement.innerText=rollType+' Cinnamon Roll';
+if (headerElement){
+    headerElement.text=rollType+' Cinnamon Roll';
+};
+
 
 const rollImage=document.querySelector('#rollImage');
+if(rollImage){
 rollImage.src='./assets/'+rollType+'-cinnamon-roll.jpg';
+};
 
 const priceElement=document.querySelector('#priceElement');
 console.log(priceElement);
 const priceObj=rolls[rollType];
 console.log(priceObj);
-const bunPrice=priceObj['basePrice'];
-priceElement.innerText='$'+bunPrice;
 
+function getPrice(){
+    for (var roll in rolls){
+        if (roll==rollType){
+            const bunPrice=priceObj.basePrice;
+            return bunPrice;
+        }
+    }
+}
+
+if (priceElement){
+    priceElement.innerText='$'+getPrice();
+}
+
+
+
+//From original js/pricing.js file
 let glazings=[
     {select:'Keep original', add:0.00},
     {select:'Sugar milk', add:0.00},
@@ -62,6 +83,9 @@ let sizes=[
 
 let glazingOptions=document.querySelector('#glazingOptions');
 let sizeOptions=document.querySelector('#sizeOptions');
+const glazingSelect=document.querySelector('select#glazingOptions');
+const sizeSelect=document.querySelector('select#sizeOptions');
+
 
 for (let i=0; i<glazings.length; i++)
 {
@@ -69,7 +93,10 @@ for (let i=0; i<glazings.length; i++)
     let option=document.createElement('option');
     option.text=selected.select;
     option.value=selected.add;
-    glazingOptions.add(option);
+    if (option!=null){
+        // glazingOptions.add(option);
+        glazingSelect.appendChild(option);
+    }
 }
 
 for (let i=0; i<sizes.length; i++)
@@ -78,13 +105,18 @@ for (let i=0; i<sizes.length; i++)
     let option=document.createElement('option');
     option.text=selected.size;
     option.value=selected.multiply;
-    sizeOptions.add(option);
+    // sizeOptions.add(option);
+    if (option!=null){
+        sizeSelect.appendChild(option);
+    }
+   
 }
 
 glazingOptions.addEventListener('change', onSelectValueChange);
 sizeOptions.addEventListener('change', onSelectValueChange);
 
 function onSelectValueChange(){
+    const bunPrice=getPrice(rollType);
     let glazingPrice=parseFloat(glazingOptions.value);
     let sizePrice=parseFloat(sizeOptions.value);
     let displayPrice=document.querySelector('.price');
@@ -94,3 +126,30 @@ function onSelectValueChange(){
     displayPrice.innerText=roundedPrice;
 }
 
+//Add to cart
+
+class Roll {
+
+    constructor(rollType, rollGlazing, packSize, basePrice) {
+        this.type = rollType;
+        this.glazing =  rollGlazing;
+        this.size = packSize;
+        this.basePrice = basePrice;
+    }
+}
+
+const rollCart=new Set();
+
+function addNewRoll(rollType, rollGlazing, packSize, basePrice){
+    console.log(glazingOptions);
+    console.log(sizeOptions);
+    const glazeSelectVal= glazingSelect.option[glazingSelect.selectedIndex].text;
+    const sizeSelectVal=sizeSelect.option[sizeSelect.selectedIndex].text;
+    const item=new Roll(rollType, glazeSelectVal, sizeSelectVal, getPrice());
+    rollCart.add(item);
+    console.log(item);
+    console.log(rollCart);
+    return rollCart;
+}
+
+console.log(rollCart);
