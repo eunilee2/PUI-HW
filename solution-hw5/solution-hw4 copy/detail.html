@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Original Cinnamon Roll</title>
     <link rel="stylesheet" href="css/detail.css">
-    <script defer src="pricing.js"></script>
+    <script defer src="js/rollsData.js"></script>
   </head>  
 
   
@@ -26,14 +26,13 @@
           <hr class="rule"/>
         </div>
         <div class="pagealign">
-          <h1 class="pagetext">Original cinnamon roll</h1>
+          <h1 id="headerElement"class="pagetext"></h1>
         </div>
       </section>
     </nav>
 
     <main class="flex spacing">
-      <img src="assets/original-cinnamon-roll.jpg" class="img"
-      alt="original"/>
+      <img id="rollImage" src="" class="img"><img/>
       <section id="body" class="menu spacing">
         <p class="text">Customize our delicious,<br>
         hand-made cinnamon roll to<br>
@@ -63,10 +62,10 @@
             </div>
           </div>
           <div class="flex spacing">
-            <p class="price" onchange="glazingChange(element)">$2.49</p>
+            <p id="priceElement"class="price" onchange="glazingChange(element)"></p>
             <section class="buttonalign">
               <button class="button buttontext" name="Add to Cart"
-              value="Add to Cart">Add to Cart</button>
+              value="Add to Cart" onclick="addNewRoll()">Add to Cart</button>
             </section>
           </div>
         </form>
