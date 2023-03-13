@@ -81,8 +81,8 @@ let sizes=[
     {size:12,multiply:10},
 ]
 
-let glazingOptions=document.querySelector('#glazingOptions');
-let sizeOptions=document.querySelector('#sizeOptions');
+let chooseGlaze=document.querySelector('#glazingOptions');
+let chooseSize=document.querySelector('#sizeOptions');
 const glazingSelect=document.querySelector('select#glazingOptions');
 const sizeSelect=document.querySelector('select#sizeOptions');
 
@@ -94,8 +94,8 @@ for (let i=0; i<glazings.length; i++)
     option.text=selected.select;
     option.value=selected.add;
     if (option!=null){
-        // glazingOptions.add(option);
-        glazingSelect.appendChild(option);
+        chooseGlaze.add(option);
+        // glazingSelect.appendChild(option);
     }
 }
 
@@ -105,26 +105,43 @@ for (let i=0; i<sizes.length; i++)
     let option=document.createElement('option');
     option.text=selected.size;
     option.value=selected.multiply;
-    // sizeOptions.add(option);
     if (option!=null){
-        sizeSelect.appendChild(option);
+        chooseSize.add(option);
+        // sizeSelect.appendChild(option);
     }
    
 }
 
-glazingOptions.addEventListener('change', onSelectValueChange);
-sizeOptions.addEventListener('change', onSelectValueChange);
+chooseGlaze.addEventListener('change', onSelectValueChange);
+chooseSize.addEventListener('change', onSelectValueChange);
 
 function onSelectValueChange(){
     const bunPrice=getPrice(rollType);
-    let glazingPrice=parseFloat(glazingOptions.value);
-    let sizePrice=parseFloat(sizeOptions.value);
+    let glazingPrice=parseFloat(chooseGlaze.value);
+    let sizePrice=parseFloat(chooseSize.value);
     let displayPrice=document.querySelector('.price');
     let itemPrice=(bunPrice+glazingPrice)*sizePrice;
     let roundedPrice='$'+itemPrice.toFixed(2);
 
     displayPrice.innerText=roundedPrice;
 }
+
+// Updating Cart
+
+document.querySelector('#checkout').addEventListener('click', updateCart);
+
+function updateCart(){
+    let glazeIndex=chooseGlaze.selectedIndex;
+    let glazeChoice=glazeOptions[glazeIndex];
+
+    let sizeIndex=choosePack.selectedIndex;
+    let sizeChoice=sizeOptions[sizeIndex];
+
+    let choiceRoll= new Roll(rollType, glazeChoice.glaze, sizeChoice.size, 
+        rollPrice);
+    cart.push(choiceRoll);
+}
+
 
 //Add to cart
 
@@ -135,21 +152,79 @@ class Roll {
         this.glazing =  rollGlazing;
         this.size = packSize;
         this.basePrice = basePrice;
+        let glazingPrice=parseFloat(chooseGlaze.value);
+        let sizePrice=parseFloat(chooseSize.value);
+        this.itemPrice=(basePrice+glazingPrice)*sizePrice;
     }
 }
 
 const rollCart=new Set();
 
 function addNewRoll(rollType, rollGlazing, packSize, basePrice){
-    console.log(glazingOptions);
-    console.log(sizeOptions);
-    const glazeSelectVal= glazingSelect.option[glazingSelect.selectedIndex].text;
-    const sizeSelectVal=sizeSelect.option[sizeSelect.selectedIndex].text;
-    const item=new Roll(rollType, glazeSelectVal, sizeSelectVal, getPrice());
+    const item=new Roll(rollType, rollGlazing, packSize, basePrice);
     rollCart.add(item);
-    console.log(item);
-    console.log(rollCart);
-    return rollCart;
+    return item;
 }
 
-console.log(rollCart);
+function editCart(roll){
+    const cart=document.querySelector('#cartEditor');
+    const clone =template.content.cloneNode(true);
+    roll.element.clone.querySelector('#rollItem')
+
+    function deleteRoll(){
+        roll.element.remove(roll);
+        rollCart.delete(roll);
+        updatePrice();
+    }
+
+    const removeButton=roll.element.querySelector('#delete');
+    removeButton.addEventListender('click', deleteRoll);
+
+    const cartAll=document.querySelector('#cartAll');
+    cartAll.append(roll.element);
+    updateCartPage(roll);
+    updatePrice();
+}
+
+function updatePrice(){
+    let totalPrice=document.getElementById("rollPrice");
+    let totalPriceVal=0;
+    if (cart.size==0){
+        totalPrice.innerHTML=='$0.00';
+    }
+    else{
+        for (const roll of rollCart){
+            totalPriceVal+=Number(roll.itemPrice);
+            let totalPriceText="$"+Number(totalPriceVal.toFixed(2));
+            totalPrice.innerHTML=totalPriceText;
+        }
+    }
+}
+
+function updateCartPage(roll){
+    const rollImg=roll.element.querySelector('#rollImg');
+    rollImg.src="assets/"+rolls[roll.type]+".jpg";
+
+    const rollName=roll.element.querySelector('#rollName');
+    rollName.innerHTML=roll.type+" Cinnamon Roll";
+
+    const rollGlazing=roll.element.querySelector('#rollGlazing');
+    rollGlazing.innerHTML="Glazing: "+roll.glazing;
+
+    const rollSize=roll.element.querySelector('#rollSize');
+    rollSize.innerHTML="Pack Size: "+roll.size;
+
+    const rollPrice=roll.element.querySelector('#rollPrice');
+    rollPrice.innerHTML="Glazing: "+roll.itemPrice;
+
+    updatePrice();
+}
+
+addNewRoll("Original", "Sugar Milk", "1", 2.49);
+addNewRoll("Walnut", "Vanilla Sugar", "12", 3.94);
+addNewRoll("Raisin", "Sugar Milk", "3", 2.99);
+addNewRoll("Apple", "Original", "3", 3.49);
+
+for (const roll of rollCart){
+    editCart(roll);
+}

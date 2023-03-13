@@ -31,41 +31,28 @@
       </section>
     </nav>
 
-    <main id="body">
-      <section class="spacing flex">
-        <div>
-          <img src="assets/original-cinnamon-roll.jpg" class="img"
-          alt="original"/>
-          <p class="caption">Remove</p>
-        </div>
-        <div class="flex-child1">
-          <p class="text">Original Cinnamon Roll<br>
-          Glazing: Keep original<br>
-          Pack Size: 1</p>
-        </div>
-        <div class="flex-child2">
-          <p class="text">$2.49</p>
-        </div>
-      </section>
-      <section class="flex">
-        <div>
-          <img src="assets/double-chocolate-cinnamon-roll.jpg" class="img"
-          alt="original"/>
-          <p class="caption">Remove</p>
-        </div>
-        <div class="flex-child1">
-          <p class="text">Double Chocolate Cinnamon Roll<br>
-          Glazing: Sugar milk<br>
-          Pack Size: 6</p>
-        </div>
-        <div class="flex-child2">
-          <p class="text">$27.45</p>
+    <main id="cartAll"class="body">
+      <section id="cartEditor" class="spacing flex">
+        <div id="rollItem">
+          <div>
+            <img id="rollImg" src="" class="img"/>
+            <button id="delete"><p class="caption">Remove</p></button>
+          </div>
+          <div class="flex-child1">
+            <p id="rollName"class="text"></p>
+            <p id="rollGlazing"class="text"></p>
+            <p id="rollSize"class="text"></p>
+          </div>
+          <div class="flex-child2">
+            <p id="rollPrice"class="text"></p>
+          </div>
         </div>
       </section>
+      
       <hr class="rule"/>
       <section class="flex flex-child3">
         <p class="text">Total</p>
-        <p class="text">$29.94</p>
+        <p id="rollPrice"class="text"></p>
       </section>
       <section class="buttonalign">
         <button class="button buttontext" 
